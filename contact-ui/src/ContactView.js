@@ -5,7 +5,7 @@ import EmailView from './EmailView';
 import AttributesView from './AttributesView';
 import PhoneView from './PhoneView';
 
-export default class SearchView extends Component {
+export default class ContactView extends Component {
 
     constructor(props) {
         super(props);
@@ -29,7 +29,6 @@ export default class SearchView extends Component {
                 return response.json();
             })
             .then((myJson) => {
-                console.log(JSON.stringify(myJson));
                 this.setState({
                     isFetched: true,
                     contacts: myJson.data
@@ -58,10 +57,9 @@ export default class SearchView extends Component {
 
     filterContacts() {
         const contacts = this.state.contacts;
-        console.log(contacts);
         const filteredContacts = contacts.filter((contact) => {
             if (contact.emails.length > 0 && this.state.emailFilter) {
-                console.log("contact with emails : ",contact.emails );
+                console.log("contact with emails : ", contact.emails);
                 var passFilter = false;
                 contact.emails.map((email) => {
                     if (email.email.toLowerCase().indexOf(this.state.emailFilter) >= 0) {
@@ -75,7 +73,6 @@ export default class SearchView extends Component {
                 return contact.name.toLowerCase().search(this.state.nameFilter.toLowerCase()) !== -1;
             return true;
         });
-        console.log(filteredContacts);
         return filteredContacts;
     }
 

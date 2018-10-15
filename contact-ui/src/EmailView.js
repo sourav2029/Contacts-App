@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 
 export default class EmailView extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const emails = this.props.emails;
         if (emails.length > 0) {

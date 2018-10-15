@@ -16,7 +16,7 @@ export default class Filters extends Component {
                     <div className="col-sm-3">
                         <div className="form-group">
                             <label className="control-label">Email</label>
-                            <input type="text" id="email" name="emailFilter" value="" placeholder="Email"
+                            <input type="text" id="email" name="emailFilter"  placeholder="Email"
                                    className="form-control" value={this.props.emailFilter} onChange={onChange}/>
                         </div>
                     </div>

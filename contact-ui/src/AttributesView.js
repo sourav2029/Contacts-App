@@ -17,6 +17,7 @@ export default class AttributesView extends Component {
 
     render() {
         const attributes = this.props.attributes;
+        console.log(attributes);
         if (this.isEmpty(attributes)) {
             return (<td>NA</td>)
         } else {
